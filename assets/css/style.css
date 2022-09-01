@@ -1,0 +1,218 @@
+@import "./root.css";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 15vh 84vh;
+    gap:1vh 1rem;
+    grid-template-areas: "aside header"
+                        "aside main" ;
+ background: var(--background-primary);
+
+ /* Header */
+}
+header{
+    display: flex;
+    background: var(--background-primary);
+    grid-area: header;
+    color: #fff;
+    padding: 0 2rem ;
+}
+header .inicio{
+    flex: 3;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header .titulo{
+    font-size: 1.5rem;
+}
+header .subtitulo{
+    font-size: .75rem;
+    color: rgb(130, 130, 130);    
+ 
+    margin-top: .5rem;
+}
+
+header .perfil{
+    display: flex;
+    align-items: center;
+    flex:1;
+    justify-content: space-around;
+}
+header .perfil .settings-perfil{
+    font-size: 1.5rem;
+} 
+
+ /* Fim Header */
+
+
+/* Aside - menu */
+
+aside{
+    grid-area: aside;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--color-primary);
+    font-weight: 300;
+    background: var(--background-primary);
+  
+ 
+}
+aside .loja{
+   width: 100%;
+   padding: 0 0 .75rem 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex: 2;
+   border-radius: 1rem;
+   border-right: 0.1rem solid var(--color-line);
+   border-bottom: 0.1rem solid var(--color-line);
+   font-weight: 900;
+   font-family: Arial, Helvetica, sans-serif;
+   
+}
+aside .lista{
+    justify-content: center;
+    align-items: flex-start;
+    display: flex;
+    width: 100%;
+    border-radius: 1rem;
+    border-right: 0.1rem solid var(--color-line);
+    border-bottom: 0.1rem solid var(--color-line);
+    flex:8;
+}
+
+aside .lista ul{
+    padding-top: 1rem;
+    text-decoration: none;
+}
+aside .lista ul li {
+    display: flex;
+    margin-top: 1rem;
+    text-decoration: none;
+    list-style: none;
+    cursor: pointer;
+}
+aside .lista ul li i {
+    padding-right: .75rem;
+}
+
+aside .footer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex: 3;
+    width: 100%;
+    padding: 2rem;
+    border-radius: 1rem;
+    border-right: 0.1rem solid var(--color-line);
+    border-bottom: 0.1rem solid var(--color-line);
+}
+aside .footer .help{
+    padding: 10px;
+ 
+}
+aside .footer .contato{
+    padding: 10px;
+ 
+}
+aside .footer .sair{
+    padding: 10px;
+    display: flex;
+}
+aside .footer i{
+    margin-right: .5rem;
+}
+/*Fim Aside - menu */
+main{
+    grid-area: main;
+    display: grid ;
+    grid-template-columns: 60% 35%;
+    grid-template-rows: 20% 40% 30%;
+    grid-template-areas: "card card" "linha pizza" "tabela tabela";
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+  
+
+  
+}
+@keyframes main {
+    from {  transform: translateX(100px);}
+    to {  transform: translateX(0px);}
+  }
+  @keyframes card {
+    from {  transform: translateX(200px);}
+    to {  transform: translateX(0px);}
+  }
+  @keyframes grafico {
+    from {  transform: translateX(-200px);}
+    to {  transform: translateX(0px);}
+  }
+main .cards{
+    grid-area: card;
+    background: var(--background-secondary);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-radius: .5rem;
+    animation: card .2s;
+
+
+}
+main .cards .card{
+   border-right: 1px solid var(--color-line);
+   color: var(--color-primary);
+ 
+    
+}
+main .grafico-linha{
+    grid-area: linha;
+    background: var(--background-secondary);
+    border-radius: .5rem;
+    animation: grafico .2s;
+ 
+    
+}
+main .grafico-pizza{
+    grid-area: pizza;
+    background: var(--background-secondary);
+    border-radius: .5rem;
+    animation: card .2s;
+}
+
+main .tabela{
+    grid-area: tabela;
+    background: var(--background-secondary);;
+    border-radius: .5rem;
+    animation: main .2s;
+ 
+}
+
+
+
+
+/* Grafico Linha */
+.myChart{
+    height: 100%;
+    width: 100%;
+    padding: .5rem;
+
+}
+
+
+
