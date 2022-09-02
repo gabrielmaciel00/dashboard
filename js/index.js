@@ -64,3 +64,58 @@ const labelsPie = [
     document.getElementById('myChart-pie'),
     configPie
   );
+
+  // simulando dados requisição
+
+  const users = [
+    {
+      id: 1,
+      nome: 'João da Silva',
+      email: 'joão@gmail'
+    },
+    {
+      id: 2,
+      nome: 'Miguel Oliveira',
+      email: 'miguel@gmail'
+    },
+    {
+      id: 3,
+      nome: 'Guilherme Pedroso',
+      email: 'miguel@gmail'
+    },
+    {
+      id: 4,
+      nome: 'Carlos Silveira',
+      email: 'carlos@gmail'
+    },
+  ]
+
+  const containerUsers = document.querySelector('.container-usuarios')
+
+  users.forEach(({nome})=>{
+    const card = document.createElement('div')
+    card.classList.add('usuarios')
+    card.innerText = nome
+    containerUsers.append(card)
+  })
+  const cards = document.querySelectorAll('.usuarios')
+
+//#region busca usuario
+
+const inpPesquisa = document.getElementById('inpPesquisa')
+inpPesquisa.addEventListener('input', function(){
+  cards.forEach(card =>{
+    const nomeUser = card.innerText.toLowerCase()
+    if(nomeUser.includes(this.value.toLowerCase())){
+      card.style.display = 'flex'
+      return
+    }
+    card.style.display = 'none'
+  })
+})
+//#endregion
+
+
+  
+
+
